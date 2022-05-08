@@ -1,0 +1,7 @@
+<resources>
+	<string name="app_name">Pokedex</string>
+	<string name="title_item_detail">Item Detail</string>
+	<string name="pokemon_image">Pokemon image</string>
+	<string name="pokemon_id">#%1$s %2$s</string>
+	<string name="please_wait">Please wait...</string>
+</resources>
