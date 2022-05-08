@@ -1,5 +1,6 @@
 package com.tizzone.pokedex.presentation.ui.pokemonList
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -51,6 +52,8 @@ class PokemonRecyclerViewAdapter(
                                 palette?.let {
                                     val backgroundColor = palette.getDominantColor((ContextCompat.getColor(context, com.google.android.material.R.color.design_default_color_primary)))
                                     holder.carView.setCardBackgroundColor(backgroundColor)
+                                    val textColor = if (holder.isColorDark(backgroundColor)) Color.WHITE else Color.BLACK
+                                    holder.nameView.setTextColor(textColor)
                                 }
                             }
                         }
@@ -74,6 +77,14 @@ class PokemonRecyclerViewAdapter(
             itemView.setOnClickListener {
                 interaction.onItemSelected(bindingAdapterPosition, pokemon)
             }
+        }
+        fun isColorDark(color: Int): Boolean {
+            val darkness = 1 - (
+                0.299 * Color.red(color) +
+                    0.587 * Color.green(color) +
+                    0.114 * Color.blue(color)
+                ) / 255
+            return darkness >= 0.5
         }
     }
 

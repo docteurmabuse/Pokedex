@@ -2,6 +2,7 @@ package com.tizzone.pokedex.data.network
 
 import com.tizzone.pokedex.data.network.model.PokemonResponse
 import com.tizzone.pokedex.data.network.model.PokemonsResponse
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -19,5 +20,5 @@ interface PokemonsApi {
     suspend fun getPokemon(
         @Path("name")
         name: String
-    ): PokemonResponse
+    ): Response<PokemonResponse>
 }

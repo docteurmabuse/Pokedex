@@ -11,12 +11,15 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.tizzone.pokedex.R
 import com.tizzone.pokedex.databinding.FragmentPokemonListBinding
 import com.tizzone.pokedex.domain.model.Pokemon
+import com.tizzone.pokedex.utils.ARG_POKEMON_NAME
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
@@ -108,6 +111,9 @@ class PokemonListFragment : Fragment(), PokemonRecyclerViewAdapter.Interaction {
     }
 
     override fun onItemSelected(position: Int, pokemon: Pokemon) {
-        var bundle = Bundle()
+        val bundle = Bundle()
+        bundle.putString(ARG_POKEMON_NAME, pokemon.name)
+
+        view?.findNavController()?.navigate(R.id.item_detail_fragment, bundle)
     }
 }

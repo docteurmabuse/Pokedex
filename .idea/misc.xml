@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/drawable/ic_baseline_catching_pokemon_24.xml" value="0.124" />
         <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout-land/fragment_pokemon_list.xml" value="0.29635416666666664" />
         <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout-sw600dp/fragment_pokemon_list.xml" value="0.1" />
         <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout/activity_pokemon.xml" value="0.1" />
         <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout/activity_pokemon_detail.xml" value="0.13125" />
         <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout/fragment_item_detail.xml" value="0.25" />
-        <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout/fragment_pokemon_detail.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout/fragment_pokemon_detail.xml" value="0.1" />
         <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout/fragment_pokemon_list.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout/item_list_content.xml" value="0.25" />
         <entry key="..\:/Users/Laurent Tizzone/AndroidStudioProjects/Pokedex/app/src/main/res/layout/pokemon_list_content.xml" value="0.264" />

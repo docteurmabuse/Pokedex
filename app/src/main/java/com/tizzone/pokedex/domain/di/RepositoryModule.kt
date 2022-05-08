@@ -1,6 +1,7 @@
 package com.tizzone.pokedex.domain.di
 
 import com.tizzone.pokedex.data.network.PokemonsApi
+import com.tizzone.pokedex.domain.model.mappers.PokemonDetailDtoMapper
 import com.tizzone.pokedex.domain.model.mappers.PokemonDtoMapper
 import com.tizzone.pokedex.domain.repositories.PokemonsRepository
 import com.tizzone.pokedex.domain.repositories.PokemonsRepositoryImpl
@@ -28,11 +29,13 @@ object RepositoryModule {
     @Provides
     fun providesPokemonsRepository(
         apiService: PokemonsApi,
-        mapper: PokemonDtoMapper
+        mapper: PokemonDtoMapper,
+        mapperPokemonDetail: PokemonDetailDtoMapper
     ): PokemonsRepository {
         return PokemonsRepositoryImpl(
             pokemonsApi = apiService,
-            mapper = mapper
+            mapper = mapper,
+            mapperPokemonDetail = mapperPokemonDetail
         )
     }
 
@@ -40,5 +43,11 @@ object RepositoryModule {
     @Provides
     fun providesPokemonsDtoMapper(): PokemonDtoMapper {
         return PokemonDtoMapper()
+    }
+
+    @Singleton
+    @Provides
+    fun providesPokemonDetailsDtoMapper(): PokemonDetailDtoMapper {
+        return PokemonDetailDtoMapper()
     }
 }

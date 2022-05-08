@@ -16,10 +16,10 @@
 	<fragment
 		android:id="@+id/item_detail_fragment"
 		android:name="com.tizzone.pokedex.presentation.ui.pokemonDetails.PokemonDetailFragment"
-		android:label="item_detail"
+		android:label="Pokemon detail"
 		tools:layout="@layout/fragment_pokemon_detail">
 		<argument
-			android:name="item_id"
+			android:name="pokemon_name"
 			android:defaultValue=""
 			app:argType="string" />
 	</fragment>

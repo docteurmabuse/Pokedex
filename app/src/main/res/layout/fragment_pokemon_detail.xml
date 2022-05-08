@@ -22,6 +22,16 @@
 			app:layout_scrollFlags="scroll|exitUntilCollapsed"
 			app:toolbarId="@+id/toolbar">
 
+			<ImageView
+				android:id="@+id/image_detail"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:fitsSystemWindows="true"
+				android:scaleType="centerCrop"
+				android:transitionName="imageView"
+				app:layout_collapseMode="parallax"
+				android:contentDescription="@string/pokemon_details_image" />
+
 			<androidx.appcompat.widget.Toolbar
 				android:id="@+id/detail_toolbar"
 				android:layout_width="match_parent"
@@ -40,7 +50,7 @@
 		app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 		<TextView
-			android:id="@+id/item_detail"
+			android:id="@+id/item_name"
 			style="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
