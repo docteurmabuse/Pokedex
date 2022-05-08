@@ -4,4 +4,5 @@
 	<string name="pokemon_image">Pokemon image</string>
 	<string name="pokemon_id">#%1$s %2$s</string>
 	<string name="please_wait">Please wait...</string>
+	<string name="pokemon_details_image">Pokemon details image</string>
 </resources>
