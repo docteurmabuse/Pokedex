@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -57,6 +58,7 @@ class PokemonListFragment : Fragment(), PokemonRecyclerViewAdapter.Interaction {
         setupRecyclerView(recyclerView)
         progressBar = binding.progressBar
         loadingText = binding.waitText
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
         setObserver()
     }

@@ -6,4 +6,5 @@
 	<string name="pokemon_id">#%1$s %2$s</string>
 	<string name="please_wait">Merci de patienter…</string>
 	<string name="pokemon_details_image">Pokemon image de détail</string>
+	<string name="type">Type:</string>
 </resources>

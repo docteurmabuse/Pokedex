@@ -9,7 +9,7 @@ constructor() : ApiMapper<PokemonResponse, PokemonDetails> {
     override fun mapDtoDomain(itemDto: PokemonResponse): PokemonDetails {
         return PokemonDetails(
             id = itemDto.id!!,
-            name = itemDto.name!!,
+            name = itemDto.name!!.replaceFirstChar { it.uppercase() },
             typesItem = itemDto.types!!,
             imageUrl = getImageUrl(itemDto.id)
         )

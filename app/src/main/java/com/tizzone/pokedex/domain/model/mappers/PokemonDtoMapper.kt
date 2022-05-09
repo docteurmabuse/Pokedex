@@ -17,7 +17,7 @@ constructor() : ApiMapper<ResultsItem, Pokemon> {
     private fun getId(url: String?) =
         url?.substringAfterLast("pokemon/")?.filter { it.isDigit() }?.toIntOrNull() ?: 0
 
-    private fun getImageUrl(url: String?) = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getId(url)}.png"
+    private fun getImageUrl(url: String?) = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${getId(url)}.png"
 
     fun toDomainPokemonList(initial: List<ResultsItem>): List<Pokemon> {
         return initial.map { mapDtoDomain(it) }

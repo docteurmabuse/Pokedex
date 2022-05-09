@@ -4,17 +4,17 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.view.isVisible
 import androidx.paging.PagingDataAdapter
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.transform.CircleCropTransformation
-import coil.transform.RoundedCornersTransformation
 import com.tizzone.pokedex.R
 import com.tizzone.pokedex.databinding.PokemonListContentBinding
 import com.tizzone.pokedex.domain.model.Pokemon
@@ -46,7 +46,11 @@ class PokemonRecyclerViewAdapter(
                 holder.imageView.load(pokemon.imageUrl) {
                     allowHardware(false)
                     listener(
+                        onStart = {
+                            holder.progress.isVisible = true
+                        },
                         onSuccess = { _, result ->
+                            holder.progress.isVisible = false
                             // Create the palette on a background thread.
                             Palette.Builder(result.drawable.toBitmap()).generate { palette ->
                                 palette?.let {
@@ -58,12 +62,8 @@ class PokemonRecyclerViewAdapter(
                             }
                         }
                     )
-                    crossfade(true)
                     crossfade(200)
-                    transformations(CircleCropTransformation())
-                    transformations(RoundedCornersTransformation(25f))
-                    placeholder(R.drawable.ic_baseline_catching_pokemon_24)
-                    fallback(R.drawable.ic_baseline_catching_pokemon_24)
+                    error(R.drawable.ic_baseline_catching_pokemon_24)
                 }
             }
         }
@@ -73,6 +73,8 @@ class PokemonRecyclerViewAdapter(
         val nameView: TextView = binding.nameText
         val imageView: ImageView = binding.image
         val carView: CardView = binding.card
+        val progress: ProgressBar = binding.progress
+
         fun bind(pokemon: Pokemon) {
             itemView.setOnClickListener {
                 interaction.onItemSelected(bindingAdapterPosition, pokemon)

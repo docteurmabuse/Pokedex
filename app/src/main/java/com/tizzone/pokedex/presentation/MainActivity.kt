@@ -6,7 +6,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.tizzone.pokedex.R
 import com.tizzone.pokedex.databinding.ActivityPokemonBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,15 +22,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_item_detail) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
         val navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_item_detail)
-        return navController.navigateUp(appBarConfiguration) ||
-            super.onSupportNavigateUp()
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
